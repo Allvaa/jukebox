@@ -7,7 +7,7 @@ import { getSongInfo } from "../YoutubeDownload";
 
 export class YoutubeScrape {
     private readonly initialDataRegex = /(window\["ytInitialData"]|var ytInitialData)\s*=\s*(.*);/;
-    private readonly playlistURLRegex = /^https?:\/\/(?:www.|)youtube.com\/playlist\?list=(.*)$/;
+    private readonly playlistURLRegex = /^https?:\/\/(?:www\.|)youtube\.com\/playlist\?list=(.*)$/;
     private readonly videoURLRegex = /^https?:\/\/((?:www\.|)youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)(\S+)$/;
     public constructor(public readonly client: Jukebox) {}
 
