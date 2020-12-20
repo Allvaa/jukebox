@@ -24,7 +24,7 @@ export class YoutubeScrape {
     }
 
     public async search(query: string): Promise<VideoInfo[]> {
-        const response = await (await fetch(`https://www.youtube.com/results?search_query=${decodeURIComponent(query)}`)).text();
+        const response = await (await fetch(`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`)).text();
         return this.extractSearchResults(response);
     }
 
